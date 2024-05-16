@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+     function secondMostRepeatedWord(words) {
+    const wordCount = {};
+
+    // Count the occurrences of each word using a for loop
+    for (let i = 0; i < words.length; i++) {
+        const word = words[i];
+        wordCount[word] = (wordCount[word] || 0) + 1;
+    }
+
+    let firstMaxCount = 0;
+    let secondMaxCount = 0;
+    let firstMaxWord = "";
+    let secondMaxWord = "";
+
+    // Iterate through the wordCount object to find the two highest counts
+    for (const word in wordCount) {
+        const count = wordCount[word];
+        console.log(count)
+
+        if (count > firstMaxCount) {
+            // Update both max counts and words
+            secondMaxCount = firstMaxCount;
+            secondMaxWord = firstMaxWord;
+            firstMaxCount = count;
+            firstMaxWord = word;
+        } else if (count > secondMaxCount && count !== firstMaxCount) {
+            // Update only the second max count and word
+            secondMaxCount = count;
+            secondMaxWord = word;
+        }
+    }
+
+    return secondMaxWord;
+}
+
+const words = ["aaa", "bbb", "aaa", "bbb", "aaa", "ccc"];
+const secondMostRepeated = secondMostRepeatedWord(words);
+
+console.log("Second most repeating word:", secondMostRepeated);
+
+
+
+    </script>
+</body>
+</html>

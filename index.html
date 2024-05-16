@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let score=0;
+        let word=["aaa","bbb","aaa","bbb","aaa","ccc"]
+       let main={}
+    //    let i;
+        function string(word){
+            let most=[];
+            let overall=[];
+            for( let i=0;i< word.length;i++){
+            var repeating=1,
+            store ="";
+            for(let j= i + 1;j<word.length;j++){
+                if(word[i]===word[j]){
+                    repeating++
+                    store=word[i]
+                }
+            }
+            if(repeating>1){
+                (Object.values(main).entries(store)===false)
+                let temp = main[i]
+                main[i] = main[j]
+                main[j] = temp 
+            }
+                console.log(temp);
+        }
+    }
+    string(word)
+
+    </script>
+</body>
+</html>const word in wordCount
